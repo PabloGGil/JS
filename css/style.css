@@ -215,7 +215,7 @@ footer ul li {
   flex-direction: column;
 }
 
-h3 {
+h3,h5 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: x-large;
   font-weight: bolder;

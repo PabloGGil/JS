@@ -36,3 +36,26 @@
     /* text-shadow: rgb(231, 238, 98) 0px 0px 5px; */
     text-align: center;
   }
+
+  
+h3,h5 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: x-large;
+    font-weight: bolder;
+    color: #b79393;
+    text-shadow: rgb(231, 238, 98) 0px 0px 5px;
+    text-align: center;
+  }
+
+   .carousel-control-next-icon,.carousel-control-prev-icon {
+    background-color: red; /* Cambia el color aquí */
+    /* background-image:none; /* Elimina la imagen predeterminada */
+    color :black
+}
+
+.carousel-item {
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* height: 500px; Ajusta la altura según tus necesidades */
+}
