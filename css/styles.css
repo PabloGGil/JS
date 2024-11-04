@@ -4,6 +4,13 @@
   padding: none;
   box-sizing: border-box;
 }
+
+.itim-regular {
+  font-family: "Itim", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .cabecera{
   background-color: blue;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -25,6 +32,7 @@ main h1 {
   color: #efe8e8;
   text-align: center;
   padding: 1em;
+  display:block;
 }
 
 .seccionOferta {
@@ -64,7 +72,7 @@ main h1 {
 .containerOferta img {
   width: 70%;
   margin: auto;
-
+  border-radius: 5%;
 }
 
 .cardOferta input {
@@ -74,6 +82,7 @@ main h1 {
   padding : 0em 2em; 
   text-align: center;
   border-radius: 10px;
+  
 }
 
 /* Estilos patra productos */
@@ -83,7 +92,7 @@ main h1 {
   font-weight: bolder;
   /* background-color: #3c08f7; */
   text-align: center;
-  display:flex;
+ 
 }
 
 
@@ -94,26 +103,32 @@ main h1 {
   scroll-margin-top: 0.7em;
   position: relative; 
   z-index: 900;
+  
 }
+
 /*  estilo de tarjetas para la ferreteria */
 .cardFerreteria{
   width: 500px;
   height: 300px;
   margin: 20px;
-  /* position: relative; */
+   position: relative; 
   border-radius: 5%;
   background-color: #d1d398;
   padding: 1em;
-  box-shadow: 0 8px 8px 0 black
+  box-shadow: 0 8px 8px 0 black;
   transition: 0.3s;
 }
 
-.cardFerreteria img {
+/* .containerProductos img {
  
-  width: 50%;
+  /* max-width: 100%;
+  max-height: 100%; */
+  /* display:block;
+  margin: auto; */
+  width: 70%;
   margin: auto;
- 
-}
+  border-radius: 5%;
+} */
 
 .cardFerreteria input {
   color: white;
@@ -145,8 +160,10 @@ footer ul li {
 
 .bodyRegistro,
 .bodyIniSesion,
+.bodyContacto,
 .bodyEquipo {
-  background-image: url(https://th.bing.com/th/id/R.bc7364fcadfaccc5be10b13c6e8f393c?rik=DHzLuDGQLtu6hg&riu=http%3a%2f%2fwallpapercave.com%2fwp%2f03NeD0y.jpg&ehk=ROPOGXAiPYcOVPiOa6FPsxMxk6%2fJ63R%2ffp91dljeDZw%3d&risl=&pid=ImgRaw&r=0);
+  /* background-image: linear-gradient(to right, red, blue); */
+  background-image: url('../imagenes/fondo.jpg');
   background-size: cover;
   background-color: rgba(
     255,
@@ -157,21 +174,12 @@ footer ul li {
   background-blend-mode: overlay; /* Mezcla el color y la imagen de fondo */
 }
 
-/* .volverHome {
-  margin: 1em;
-  display: inline;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: large;
-  font-weight: bolder;
-  text-decoration: none;
-  color: gold;
-} */
+
 
 /*  PAGINA DE INICIO SESIÓN  */
 
 .iniSesion,
-.registro,
-.secEquipo {
+.registro {
   background-color: #d1d398;
   width: 50%;
   margin: 5em auto;
@@ -186,30 +194,32 @@ footer ul li {
 .registro h2,
 .divEquipo h2 {
   font-weight: bolder;
-  color: #960505;
+  color: #053506;
   padding: 0.5em;
 }
 
-.inputIniSesion,
-.inputRegistro {
+
+.inputX {
   display: block;
   width: 85%;
-  border: 2px solid #960505;
+  border: 2px solid #111010;
   border-radius: 10px;
   margin: 3%;
   height: 3.5rem;
+ 
 }
 
 .boton {
-  background-color: #960505;
+  background-color: #0f0596;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: large;
   font-weight: bolder;
   color: #d2d3c7;
   border-radius: 10px;
   padding: 0em 2em;
+  margin-bottom: 10px;
 }
-
+/* 
 .leerTyC {
   font-size: small;
   color: #992020;
@@ -234,4 +244,48 @@ footer ul li {
   display: flex;
   align-items: center;
   flex-direction: column;
+} */
+
+.containerX {
+  display: flex;
+  flex-direction: column; /* Coloca los elementos en una columna */
+  align-items: center;    /* Centra los elementos horizontalmente */
+  padding: 20px;
+  border: 1px solid #ddd; /* Bordes del contenedor */
+  border-radius: 8px;     /* Bordes redondeados */
+  width: 300px;           /* Ancho del contenedor */
+  background-color: #f9f9f9; /* Fondo del contenedor */
+}
+
+/* Estilos para la imagen */
+.image {
+  max-width: 100%;        /* La imagen no será más grande que el contenedor */
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Estilos para el texto */
+.text {
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Estilos para el botón */
+ .containerX button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #14385e;
+  border:#150232;
+  border-style: double;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #0056b3; /* Cambio de color al pasar el mouse */
 }
