@@ -48,13 +48,13 @@ main h1 {
   justify-content: space-around;
   scroll-margin-top: 0.7em;
   position: relative; 
-  z-index: 900;
+  /* z-index: 900; */
  
 }
 
 .cardOferta{
   width: 300px;
-  height: 300px;
+  height: 500px;
   margin: 20px;
   position: relative;
   border-radius: 5%;
@@ -85,18 +85,25 @@ main h1 {
   
 }
 
+.btnAddOferta{
+  justify-content:flex-end;
+  background-color: burlywood;
+}
 /* Estilos patra productos */
 .seccionProductos{
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: x-large;
-  font-weight: bolder;
-  /* background-color: #3c08f7; */
+  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+  /* font-size: x-large; */
+  /* font-weight: bolder; */
+  background-color: #3c08f7; 
   text-align: center;
+  padding:10px;
+ 
+ 
  
 }
 
 
-.containerProductos{
+/* .containerProductos{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -104,7 +111,7 @@ main h1 {
   position: relative; 
   z-index: 900;
   
-}
+}  */
 
 /*  estilo de tarjetas para la ferreteria */
 .cardFerreteria{
@@ -119,16 +126,16 @@ main h1 {
   transition: 0.3s;
 }
 
-/* .containerProductos img {
+.containerProductos img {
  
   /* max-width: 100%;
   max-height: 100%; */
   /* display:block;
   margin: auto; */
   width: 70%;
-  margin: auto;
+  margin-bottom: 5px;
   border-radius: 5%;
-} */
+} 
 
 .cardFerreteria input {
   color: white;
@@ -156,6 +163,136 @@ footer ul li {
   padding-right: 0.6em;
 }
 
+/*  estilos de las cartas */
+.div_carta {
+  width: 300px;
+  height: 500px;
+  /* background-image: url('fondo4.jpg'); */
+  margin: 10px;
+  border: 5px solid #101010;
+  background-color: rgb(14, 190, 67);
+  border-radius: 25px;
+  padding: 10px;
+  /* overflow:auto; */
+}
+
+.titulo_producto {
+  margin: 1vh 2vw;
+  display:flexbox;
+  text-align: center;
+}
+
+
+
+.div_imagen_Producto {
+  /* margin: 0 14px; */
+  text-align: center;
+  margin: 1vh 2vw;
+}
+
+.imagen_Producto {
+  border-radius: 10px;
+  width: 50%;
+  height: 80%;
+  border: 3px solid #bcc6ccd1;
+  box-shadow: 5px 5px 5px; 
+  margin-bottom: 5px;
+ 
+}
+
+
+
+.div_caracteristica {
+  /* margin: 18px 22px; */
+  margin: 1vh 2vw
+}
+
+.titulo_caract {
+  font-weight: 700;
+  font-size: 1em;
+  display: inline-block;
+
+}
+body {
+  margin-bottom: 60px; /* Ajusta el valor según la altura del footer */
+}
+/* --------------------------------------------------prod ------------------------------------ */
+.card {
+  width: 300px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  margin: 10px;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.card-description {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.card-button {
+  background-color: #007BFF;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card-button:hover {
+  background-color: #0056b3;
+}
+.card-description-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #555;
+  font-weight: bold
+}
+.card-price {
+  font-size: 1.2rem;
+  color: #007BFF;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+/* --------------------------------------------------------------------------- */
+
+.div_precio{
+  margin: 1vh 2vw
+}
+
+.div_boton{
+  justify-content: flex-end;
+  text-align: center;
+  margin: 1vh 2vw;
+}
+.boton_Cartas{
+  background-color: blue;
+  color:aliceblue;
+  /* display :inline-block; */
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+  display : block;
+  border-radius: 5px;
+}
 /*  TODAS LAS PAGINAS MENOS LA PPAL.  */
 
 .bodyRegistro,
