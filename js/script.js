@@ -32,16 +32,26 @@ let datos=[
 
     }
 ]
-let ProductosCarrito=[];
+
 
 // Captura de objetos
 let tarjeta=document.getElementById("containerOf");
-// let botonAgregar=document.getElementsByClassName("card-button");
-// console.log(botonAgregar);
 let carrito=document.getElementById('carrito');
+
 let Cantidadproductos=0;
+let ProductosCarrito=[];
 carrito.addEventListener("click",function (){
     console.log(ProductosCarrito);
+    const modal = new bootstrap.Modal(document.getElementById('productoModal'));
+    const modalContent = document.getElementById('modal-content');
+    let htmlprod="";
+    // Carga los datos en el modal
+
+    for(i=0;i<ProductosCarrito.length;i++) {
+        htmlprod += "<strong>Nombre:</strong> "+ProductosCarrito[i].nombre+"<br><strong>Precio:</strong>"+ProductosCarrito[i].precio+"<br>";
+    }
+  modalContent.innerHTML=htmlprod;
+  modal.show();
 });
 
 
@@ -52,7 +62,7 @@ function CrearTarjeta(datoTarg){
 const card = document.createElement('containerOf');
 card.className = 'card';
 card.id=datoTarg.id;
-card.tag=datoTarg.precio;
+
 card.onclick=function(){
     console.log(datoTarg.precio);
     Cantidadproductos++;
@@ -76,7 +86,7 @@ imagen.alt = 'Imagen del producto';
 const precio = document.createElement('div');
 precio.className = 'card-price';
 precio.textContent = datoTarg.precio;
-// precio.tagName=datoTarg.precio;
+
 
 // Crea la descripción
 const descripcion = document.createElement('p');
@@ -104,13 +114,6 @@ tarjeta.appendChild(card);
 // -----Cargar las tarjetas --------
 for (var i=0;i<datos.length;i++){
     CrearTarjeta(datos[i]);
-    id=datos[i].id;
-     let captura=document.getElementById(i);
-     console.log(datos[i].precio);
-    //  captura.addEventListener('click',function(){
-    //      console.log(captura.getAttribute('tagname'));
-    //      console.log(datos[i]);
-    // });
+
 }
 
-// agregarListener();
