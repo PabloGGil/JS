@@ -32,14 +32,15 @@ let datos=[
 
     }
 ]
-
+let Cantidadproductos=0;
+let ProductosCarrito=[];
 
 // Captura de objetos
 let tarjeta=document.getElementById("containerOf");
 let carrito=document.getElementById('carrito');
 
-let Cantidadproductos=0;
-let ProductosCarrito=[];
+
+// -------LISTENERS --------------------------------
 carrito.addEventListener("click",function (){
     console.log(ProductosCarrito);
     const modal = new bootstrap.Modal(document.getElementById('productoModal'));
@@ -53,6 +54,7 @@ carrito.addEventListener("click",function (){
   modalContent.innerHTML=htmlprod;
   modal.show();
 });
+
 
 
 console.log(tarjeta);

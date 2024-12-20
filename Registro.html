@@ -51,7 +51,7 @@
           </div>
         </div>
     </nav>
-    <form class="registro" action="SendRegistro.html" method="post">
+    <form class="registro" action="index.html" method="post">
       <h2>Registro</h2>  
       
             <!-- <label for="">Nombre y apellido</label> -->
@@ -75,11 +75,11 @@
                   />
             <label for="">Fecha de nacimiento</label>
             <input class="inputX" 
-                  type="date"
-                  placeholder="Fecha de nacimiento..."
-                  name="fechanac"
+                  type="text"
+                  placeholder="Contraseña..."
+                  name="password"
                   required
-                  id="nya"
+                  id="passwd"
                   >
         
             <input class ="inputX"
@@ -88,10 +88,10 @@
                   name="provincia"
                   id="regProvincia"
                   required
-                   minlength="4"
+                  minlength="4"
                   maxlength="50"
                   />
-                  <input class="boton" type="submit" value="Registrarse" />
+                  <input id="botonRegistrarse" class="boton" type="submit" value="Registrarse" />
            
 
     </form>
@@ -122,7 +122,7 @@
       </nav>
         
     </footer>
-
+    <script src="js/registrarse.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

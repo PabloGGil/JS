@@ -51,47 +51,29 @@
           </div>
         </div>
     </nav>
-    <form class="registro" action="SendRegistro.html" method="post">
-      <h2>Registro</h2>  
+    <form class="registro" action="index.html" method="post">
+      <h2>Imicio de sesion</h2>  
       
             <!-- <label for="">Nombre y apellido</label> -->
             <input  class="inputX"
-              type="email"
-              id="correo"
-              name="correo"
+              type="text"
+              id="usuario"
+              name="usuario"
               required
-              placeholder="direccion de email"
+              placeholder=" Usuario"
               maxlength="30"
               minlength="4"
             />
             <input class="inputX"
                   type="text" 
-                  placeholder="Nombre y apellido..."
+                  placeholder="Contraseña"
                   name="nombre"
                   required
-                  id="nya"
+                  id="passwd"
                   minlength="4"
                   maxlength="50"
-                  />
-            <label for="">Fecha de nacimiento</label>
-            <input class="inputX" 
-                  type="date"
-                  placeholder="Fecha de nacimiento..."
-                  name="fechanac"
-                  required
-                  id="nya"
-                  >
-        
-            <input class ="inputX"
-                  type="text" 
-                  placeholder="Provincia..."
-                  name="provincia"
-                  id="regProvincia"
-                  required
-                   minlength="4"
-                  maxlength="50"
-                  />
-                  <input class="boton" type="submit" value="Registrarse" />
+            />
+            <input id="login" class="boton" type="submit" value="Login" />
            
 
     </form>
@@ -122,7 +104,7 @@
       </nav>
         
     </footer>
-
+    <script src="js/login.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

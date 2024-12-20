@@ -1,75 +1,52 @@
-// traigo solo 60 pokemones, en caso de querer mas cambiar el valor limit
-const apiUrl = "https://pokeapi.co/api/v2/pokemon?limit=60";
+let clima = document.getElementById('clima')
 
-// Función para obtener los datos de un Pokémon por su URL
-function getPokemonData(url) {
-  return fetch(url)
-    .then((response) => response.json())
+// fetch('https://www.meteosource.com/api/v1/free/nearest_place?lat=34.732S&lon=58.277W&language=en&key=g61toq79ut0u17grv1mdypurj1ts06tp6n9ixbov')
+
+fetch("https://www.meteosource.com/api/v1/free/point?place_id=quilmes&sections=current&timezone=UTC&language=en&units=metric&key=g61toq79ut0u17grv1mdypurj1ts06tp6n9ixbov", {
+    method: "GET",
+    headers: {"Content-type": "application/json;charset=UTF-8"}
+  })
+// .then((response)=> response.json())
+// .then((data)=>{
+    .then(response => response.json())
     .then((data) => {
-      // Extraer el nombre, imagen y peso del Pokémon
-      const pokemon = {
-        name: data.name,
-        image: data.sprites.front_default,
-        weight: data.weight,
-        height: data.height,
-      };
-      return pokemon;
-    })
-    .catch((error) => {
-      console.error("Error al obtener los datos del Pokémon:", error);
+        console.log(data);
+        // data.current((elemento)=>{
+
+        const contenedorCreado = document.createElement("div")
+        
+        contenedorCreado.innerHTML = "<h4>Temperatura "+ data.current.temperature + "</h4>"+
+        "<img src='imagenes/clima/" + data.current.icon_num +".png'>"+
+        "<p>" +data.current.summary + "</p>";
+        
+
+        clima.append(contenedorCreado);
+    //  });
+
+
     });
-}
+    //console.log(data)
+    // console.log(data.results)
+    
 
-function getAllPokemon() {
-  fetch(apiUrl)
-    .then((response) => response.json())
-    .then((data) => {
-      const pokemonList = data.results;
-      const pokemonDetailsPromises = pokemonList.map((pokemon) =>
-        getPokemonData(pokemon.url)
-      );
+    
+// })
 
-      Promise.all(pokemonDetailsPromises).then((pokemonDetailsArray) => {
-        console.log("Detalles de los Pokémon:", pokemonDetailsArray);
-        displayPokemonDetails(pokemonDetailsArray);
-      });
-    })
-    .catch((error) => {
-      console.error("Error al obtener la lista de Pokémon:", error);
-    });
-}
 
-//  mostrar los detalles de los Pokémon en el DOM
-// No encontré los puntos de ataque y defensa, entonces me traigo peso y altura
-function displayPokemonDetails(pokemonDetailsArray) {
-  const container = document.getElementById("cardPokemon-container");
-  pokemonDetailsArray.forEach((pokemon) => {
-    const pokemonElement = document.createElement("div");
-    pokemonElement.classList.add("pokemon-card"); // Agrega la clase "pokemon-card"
-    pokemonElement.innerHTML = `
-      <h3>${pokemon.name}</h3>
-      <img src="${pokemon.image}" alt="${pokemon.name}">
-      <p>Peso: ${pokemon.weight}</p>
-      <p>Altura: ${pokemon.height}</p>
-      <div >
-        <input id="btnAgregar" class="boton" onclick="agregar('${pokemon.name}','${pokemon.weight}','${pokemon.height}','${pokemon.image}')" value="Agregar">
-        <input id="btnQuitar"  class="boton" onclick="quitar('${pokemon.name}')" value="Quitar">
-      </div>
-      
-    `;
-    container.appendChild(pokemonElement);
-  });
-}
 
-// consulto a la api
-getAllPokemon();
+// Change this to your actual API key
+// let apiKey = 'g61toq79ut0u17grv1mdypurj1ts06tp6n9ixbov'
+// // Change this to your actual tier
+// let tier = 'flexi'
 
-// btnAgregar=document.getElementById("btnAgregar");
-// btnAgregar.addEventListener("click",agregar,false);
-function agregar(nombre, peso, altura, imagen) {
-  console.log("aprete boton" + nombre);
-}
+// let m = new meteosource.Meteosource(apiKey, tier)
 
-function quitar(nombre) {
-  console.log("aprete boton quitar" + nombre);
-}
+// let forecast = await m.getPointForecast({
+//     lat:-34.732,  // Latitude of the point
+//     lon: -58.277,  // Longitude of the point
+//     placeId: null,  // You can specify place_id instead of lat+lon
+//     sections: ["current"],  // is converted to "current,hourly"
+//     tz: 'US/Pacific',
+//     lang: 'en',
+//     // units: 'us',  // Defaults to 'auto'
+// })

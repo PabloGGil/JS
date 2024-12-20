@@ -1,39 +1,33 @@
-// ----- POLITICA DE contraseña --------
-const CANT_MIN_CARACT=8;
-const CANT_MIN_LETRAS=5;
-const CANT_MIN_NUMEROS=3;
-
-// -------------------------------------
+localStorage.setItem('password',"ferreteria");
+localStorage.setItem('usuario',"ferretero");
 
 
+let botonLogin=document.getElementById('login');
+botonLogin.addEventListener('click',validarLogin);
 
 
-const form = document.getElementById("botonLogin");
-form.addEventListener("click",validarDatos);
-
-// const registro = document.getElementById("botonLogin");
-// registro.addEventListener("click",validarRegistro);
-
-
-
-function validarDatos(e) {
-    let valideta=validarForm()
-    if (!valideta.rs) {
-        // Muestra un mensaje en la consola indicando que el formulario no es válido
-        console.log('El formulario no es válido. Por favor, corrige los errores.');
-        // Evita que el formulario se envíe
-        e.preventDefault(); // Evita que el formulario se envíe si hay errores de validación
-        alert(valideta.error)
-   } else {
+function validarLogin(e) {
+    // let valideta=validarRegistro()
+    usuarioIngresado=document.getElementById('usuario').value;
+    passwdIngresada=document.getElementById('passwd').value;
+    if (usuarioIngresado==localStorage.getItem('usuario') && passwdIngresada==localStorage.getItem('password')) {
         // Si la validación del formulario es exitosa, muestra un mensaje en la consola
         console.log('El formulario es válido. Enviar datos...');
-        alert("el formulario pudo enviar los datos")
+        alert("Login exitoso")
+        
+   } else {
+        // Muestra un mensaje en la consola indicando que el formulario no es válido
+        console.log('El usuario o la contraseña son invalidos.');
+        // Evita que el formulario se envíe
+        e.preventDefault(); // Evita que el formulario se envíe si hay errores de validación
+        alert("Credenciales incorrectas")
+       
     }
 };
 
-function validarForm(){
+function validarRegistro(){
     rta=[{rs:true,error:""}];
-    rta[0]= validarPass('password'); // Validar campo de contraseña
+    rta[0]= validarPass('passwd'); // Validar campo de contraseña
     rta[1]= validarCorreo('correo');
     let estado={};
     estado.rs=rta[0].rs && rta[1].rs;
@@ -43,7 +37,7 @@ function validarForm(){
     return estado;
 }
 
-export function validarCorreo(campo){
+function validarCorreo(campo){
     const field = document.getElementById(campo); // Obtiene el elemento del campo mediante su ID
     const value = field.value
     let rta={rs:true,error:""};
@@ -55,7 +49,7 @@ export function validarCorreo(campo){
     return rta;
 }
 
-export function validarFecha(campo){
+function validarFecha(campo){
     let rta={rs:false,error:"fecha invalida"};
     if(/[0-9]+\/[0-9]+\[0-9]/.test(value))
     {
@@ -67,7 +61,7 @@ export function validarFecha(campo){
 }
 
 
-export function validarTexto(campo){
+function validarTexto(campo){
     let rta={rs:false,error:"correo invalido"};
     if(/\w+/.test(value))
     {
@@ -78,7 +72,7 @@ export function validarTexto(campo){
 
 }
 
-export function validarPass(campo) {
+function validarPass(campo) {
     const field = document.getElementById(campo); // Obtiene el elemento del campo mediante su ID
     const value = field.value
     result=PoliticaPassOK(value);
@@ -86,7 +80,7 @@ export function validarPass(campo) {
     
 };
 
-export function PoliticaPassOK(valor){
+function PoliticaPassOK(valor){
     // let salida=rta;
     let salida={rs:true,error:""};
     // --- verificar cantidad de caracteres .... 8 caracteres minimo
